@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:rest_api/model/albums.dart';
+import 'package:rest_api/screen/second_screen.dart';
 import 'package:rest_api/services/networking.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,6 +33,20 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         automaticallyImplyLeading: false,
         elevation: 0.0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) {
+                    return SecondScreen();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.open_in_browser),
+          ),
+        ],
       ),
       body: Center(
         child: FutureBuilder(
